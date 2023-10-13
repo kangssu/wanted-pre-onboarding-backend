@@ -16,6 +16,8 @@ const company_entity_1 = require("./entity/company.entity");
 const jabVacancy_entity_1 = require("./entity/jabVacancy.entity");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
+const user_app_module_1 = require("./feature/user/user.app.module");
+const jobVacancy_app_module_1 = require("./feature/job_vacancy/jobVacancy.app.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -35,7 +37,9 @@ exports.AppModule = AppModule = __decorate([
                 logging: true,
                 keepConnectionAlive: true,
             }),
+            user_app_module_1.UserModule,
             company_app_module_1.CompanyModule,
+            jobVacancy_app_module_1.JobVacancyModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

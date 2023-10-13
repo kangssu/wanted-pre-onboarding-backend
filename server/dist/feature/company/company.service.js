@@ -21,6 +21,10 @@ let CompanyService = class CompanyService {
     constructor(companyRepository) {
         this.companyRepository = companyRepository;
     }
+    createCompany(createCompanyDto) {
+        const createCompany = this.companyRepository.save(createCompanyDto);
+        return createCompany;
+    }
 };
 exports.CompanyService = CompanyService;
 exports.CompanyService = CompanyService = __decorate([

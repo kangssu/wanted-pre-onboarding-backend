@@ -7,6 +7,8 @@ import { Company } from './entity/company.entity';
 import { JabVacancy } from './entity/jabVacancy.entity';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './feature/user/user.app.module';
+import { JobVacancyModule } from './feature/job_vacancy/jobVacancy.app.module';
 
 @Module({
   imports: [
@@ -23,7 +25,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       logging: true,
       keepConnectionAlive: true,
     }),
+    UserModule,
     CompanyModule,
+    JobVacancyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
