@@ -16,7 +16,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   async validate(payload: any): Promise<Omit<User, 'password'>> {
     const user: Omit<User, 'password'> =
-      await this.userService.getUserByUserEmail(payload.id);
+      await this.userService.getUserByUserEmail(payload.email);
     if (user) {
       return user;
     } else {

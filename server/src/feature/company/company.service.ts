@@ -11,8 +11,14 @@ export class CompanyService {
     private readonly companyRepository: Repository<Company>,
   ) {}
 
-  createCompany(createCompanyDto: CreateCompanyDto): Promise<Company> {
-    const createCompany = this.companyRepository.save(createCompanyDto);
+  createCompany(
+    createCompanyDto: CreateCompanyDto,
+    userId: number,
+  ): Promise<Company> {
+    const createCompany = this.companyRepository.save({
+      ...createCompanyDto,
+      userId: userId,
+    });
     return createCompany;
   }
 }

@@ -1,6 +1,10 @@
-import { IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateCompanyDto {
+  @IsNumber()
+  @IsOptional()
+  userId?: number;
+
   @IsString()
   name!: string;
 
