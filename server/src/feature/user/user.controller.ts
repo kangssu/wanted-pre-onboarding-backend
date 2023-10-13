@@ -11,7 +11,7 @@ import { CustomException } from 'src/custom/customException';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post('/create')
+  @Post('/sign-up')
   async createUser(@Body() createUserDto: CreateUserDto): Promise<User> {
     const user = await this.userService.getUserByEmailOrNickname(createUserDto);
 

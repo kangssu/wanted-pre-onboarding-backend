@@ -14,8 +14,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  getUserByUserEmail(id: string) {
-    return this.userService.getUserByUserEmail(id);
+  getUserByUserEmail(email: string) {
+    return this.userService.getUserByUserEmail(email);
   }
 
   async validateUser(

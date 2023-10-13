@@ -3,8 +3,10 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { JobVacancy } from './jobVacancy.entity';
 
 @Entity('companies')
 export class Company {
@@ -28,4 +30,7 @@ export class Company {
 
   @DeleteDateColumn({ name: 'deleted_at', type: 'timestamp', nullable: true })
   deletedAt?: Date | null;
+
+  @OneToMany(() => JobVacancy, (jobVacancy) => jobVacancy.company)
+  jobVacancy: JobVacancy[];
 }

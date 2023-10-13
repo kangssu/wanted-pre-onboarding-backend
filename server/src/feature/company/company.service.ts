@@ -21,4 +21,10 @@ export class CompanyService {
     });
     return createCompany;
   }
+
+  getCompanyByUserId(userId: number) {
+    return this.companyRepository.findOne({
+      where: { userId },
+    });
+  }
 }

@@ -1,6 +1,10 @@
-import { IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
-export class CreateJabVacancyDto {
+export class CreateJobVacancyDto {
+  @IsNumber()
+  @IsOptional()
+  companyId?: number;
+
   @IsString()
   position!: string;
 
@@ -12,4 +16,22 @@ export class CreateJabVacancyDto {
 
   @IsString()
   skill!: string;
+}
+
+export class UpdateJobVacancyDto {
+  @IsString()
+  @IsOptional()
+  position?: string;
+
+  @IsString()
+  @IsOptional()
+  rewardPay?: string;
+
+  @IsString()
+  @IsOptional()
+  contents?: string;
+
+  @IsString()
+  @IsOptional()
+  skill?: string;
 }
