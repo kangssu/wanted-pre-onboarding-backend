@@ -20,6 +20,9 @@ export class User {
   @Column()
   nickname!: string;
 
+  @Column()
+  password!: string;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 

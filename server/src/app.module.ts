@@ -9,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './feature/user/user.app.module';
 import { JobVacancyModule } from './feature/job_vacancy/jobVacancy.app.module';
+import { AuthModule } from './auth/auth.app.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { JobVacancyModule } from './feature/job_vacancy/jobVacancy.app.module';
       logging: true,
       keepConnectionAlive: true,
     }),
+    AuthModule,
     UserModule,
     CompanyModule,
     JobVacancyModule,

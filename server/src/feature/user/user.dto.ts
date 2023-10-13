@@ -9,4 +9,15 @@ export class CreateUserDto {
 
   @IsString()
   nickname!: string;
+
+  @IsString()
+  password!: string;
+}
+
+export class LoginUserDto {
+  @IsString()
+  email!: string;
+
+  @IsString()
+  password!: string;
 }

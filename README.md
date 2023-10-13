@@ -9,6 +9,7 @@
 ### 💎 기술과제에 사용한 언어 및 프레임워크
 * 언어 : TypeScript
 * 프레임워크 : nestJS
+* ORM : typeORM
 </br>
 
 ### 💎 서비스 개요
