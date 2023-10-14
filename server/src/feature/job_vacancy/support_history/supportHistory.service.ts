@@ -32,6 +32,15 @@ export class SupportHistoryService {
     });
   }
 
+  getSupportHistory(
+    jobVacancyId: number,
+    userId: number,
+  ): Promise<SupportHistory> {
+    return this.supportHistoryRepository.findOne({
+      where: { userId: userId, jobVacancyId: jobVacancyId },
+    });
+  }
+
   cancelSupportHistory(supportHistoryId: number): Promise<SupportHistory> {
     return this.supportHistoryRepository.softRemove({ id: supportHistoryId });
   }

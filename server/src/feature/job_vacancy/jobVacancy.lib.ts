@@ -48,4 +48,8 @@ export class JobVacancyLib {
     const jobVacancies = await query.getMany();
     return jobVacancies;
   }
+
+  getJobVacancyById(id: number): Promise<JobVacancy> {
+    return this.jobVacancyRepository.findOne({ where: { id } });
+  }
 }

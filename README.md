@@ -185,10 +185,10 @@ POST /user/sign-up
 #### (2) REQUEST (JSON)
 ```
 {
-    "email":"kay2023@gmail.com",
-    "name":"kay",
-    "nickname":"kay",
-    "password":"kay2023^"
+    "email": "kang2023@gmail.com",
+    "name": "강수",
+    "nickname": "kangssu",
+    "password":"kang2023^"
 }
 ```
 
@@ -535,6 +535,7 @@ GET /job-vacancy/:id
 * 사용자는 채용공고 상세에서 지원을 하면 지원 내역에 등록 됩니다.
 * 자동으로 채용공고 ID와 로그인한 사용자 ID가 등록 됩니다.
 * 로그인한 사용자만 지원할 수 있습니다.
+* 만약 삭제된 채용공고에 지원했을 경우, 이미 지원한 채용공고에 중복 지원할 경우 에러를 발생 시킵니다.
 </br>
 
 #### (1) URL
@@ -550,6 +551,18 @@ POST /job-vacancy/:jobVacancyId/support-history
     "canceledAt": null,
     "id": 2,
     "createdAt": "2023-10-14T09:57:20.000Z"
+}
+```
+
+#### (3) ERROR RESPONSE
+```
+{
+    "statusCode": 404,
+    "message": "채용공고를 찾을 수 없습니다."
+}
+{
+    "statusCode": 409,
+    "message": "이미 지원한 채용공고 입니다."
 }
 ```
 </br>
