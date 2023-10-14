@@ -10,6 +10,7 @@
 * 언어 : TypeScript
 * 프레임워크 : nestJS
 * ORM : typeORM
+* RDBMS : MySql 
 </br>
 
 ## 💎 서비스 개요
