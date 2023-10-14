@@ -174,7 +174,7 @@ DB에서 삭제됩니다.
 </br>
 
 ### ERD
-![erd](https://github.com/kangssu/wanted-pre-onboarding-backend/assets/83870420/4169d070-b62d-4b23-98e3-15944c4c7c69)
+![erd](https://github.com/kangssu/wanted-pre-onboarding-backend/assets/83870420/ac8c8cfe-1402-4a56-b223-fc3c31afe4a8)
 </br>
 
 ### 1. 사용자 회원가입
