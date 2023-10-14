@@ -20,10 +20,23 @@ export class CompanyController {
     @Body() createCompanyDto: CreateCompanyDto,
     @UserInfo() user: User,
   ): Promise<Company> {
-    const comapny = await this.companyService.getCompanyByUserId(user.id);
+    const companies = await this.companyService.getCompanyByUserEmailOrName(
+      user.id,
+      createCompanyDto.name,
+    );
 
-    if (comapny) {
-      throw new CustomException(ErrorCode.REGISTERED_DUPLICATION_USER_ID, 409);
+    if (companies) {
+      for (const company of companies) {
+        if (company.userId === user.id) {
+          throw new CustomException(
+            ErrorCode.REGISTERED_DUPLICATION_USER_ID,
+            409,
+          );
+        }
+        if (company.name === createCompanyDto.name) {
+          throw new CustomException(ErrorCode.DUPLICATION_COMPANY_NAME, 409);
+        }
+      }
     }
     return this.companyService.createCompany(createCompanyDto, user.id);
   }

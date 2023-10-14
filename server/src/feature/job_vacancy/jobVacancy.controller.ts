@@ -18,22 +18,34 @@ import { JwtAuthGuard } from 'src/auth/guard/jwt.guard';
 import { UserInfo } from 'src/decorator/userDecorator';
 import { User } from 'src/entity/user.entity';
 import { JobVacancy } from 'src/entity/jobVacancy.entity';
+import { CompanyLib } from '../company/company.lib';
+import { CustomException } from 'src/custom/customException';
+import { ErrorCode } from 'src/enum/errorCode.enum';
 
 @Controller({
   path: '/job-vacancy',
 })
 export class JobVacancyController {
-  constructor(private readonly jobVacancyService: JobVacancyService) {}
+  constructor(
+    private readonly jobVacancyService: JobVacancyService,
+    private readonly companyLib: CompanyLib,
+  ) {}
 
   @UseGuards(JwtAuthGuard)
   @Post()
-  createJobVacancy(
+  async createJobVacancy(
     @Body() createJobVacancyDto: CreateJobVacancyDto,
     @UserInfo() user: User,
   ): Promise<JobVacancy> {
+    const company = await this.companyLib.getCompanyByUserId(user.id);
+
+    if (!company) {
+      throw new CustomException(ErrorCode.NOT_FOUND_COMPANY, 404);
+    }
+
     return this.jobVacancyService.createJobVacancy(
       createJobVacancyDto,
-      user.id,
+      company.id,
     );
   }
 

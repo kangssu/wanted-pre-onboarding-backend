@@ -27,4 +27,15 @@ export class CompanyService {
       where: { userId },
     });
   }
+
+  getCompanyByUserEmailOrName(
+    userId: number,
+    companyName: string,
+  ): Promise<Company[]> {
+    return this.companyRepository
+      .createQueryBuilder('companies')
+      .where({ userId: userId })
+      .orWhere({ name: companyName })
+      .getMany();
+  }
 }

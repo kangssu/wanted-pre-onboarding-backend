@@ -15,9 +15,8 @@ export class JobVacancyService {
 
   async createJobVacancy(
     createJobVacancyDto: CreateJobVacancyDto,
-    userId: number,
+    companyId: number,
   ): Promise<JobVacancy> {
-    const company = await this.companyLib.getCompanyByUserId(userId);
     const replaceRewardPay = createJobVacancyDto.rewardPay.replaceAll(
       '[^0-9]',
       '',
@@ -25,7 +24,7 @@ export class JobVacancyService {
 
     const createJobVacancy = await this.jobVacancyRepository.save({
       ...createJobVacancyDto,
-      companyId: company.id,
+      companyId: companyId,
       rewardPay: replaceRewardPay,
     });
 
@@ -61,6 +60,7 @@ export class JobVacancyService {
     const jobVacancyAndCompany = await this.jobVacancyRepository
       .createQueryBuilder('job_vacancies')
       .leftJoinAndSelect('job_vacancies.company', 'company')
+      .orderBy('job_vacancies.id', 'DESC')
       .getMany();
 
     return jobVacancyAndCompany;
