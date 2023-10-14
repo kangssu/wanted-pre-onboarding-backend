@@ -172,6 +172,10 @@ DB에서 삭제됩니다.
 |11|채용공고 지원내역 취소|DELETE|/job-vacancy/:jobVacancyId/support-history|O|
 </br>
 
+### ERD
+![erd](https://github.com/kangssu/wanted-pre-onboarding-backend/assets/83870420/4169d070-b62d-4b23-98e3-15944c4c7c69)
+</br>
+
 ### 1. 사용자 회원가입
 * 이메일과 닉네임은 중복될 수 없기 때문에 기존에 이메일과 닉네임이 등록되어 있다면 중복되었다는 에러를 발생 시키고 회원가입이 되지 않습니다.
 * 비밀번호는 bcrypt 암호화 처리로 저장됩니다.
