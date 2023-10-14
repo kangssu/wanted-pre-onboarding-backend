@@ -592,3 +592,14 @@ DELETE /job-vacancy/:jobVacancyId/support-history
 ```
 </br>
 
+## 💎 확인사항
+* .env 파일은 해당 프로젝트에서 제외되었습니다. 아래 예시 형식처럼 꼭 들어가있어야 합니다
+```
+PORT=
+DB_USERNAME=
+DB_PASSWORD=
+DB_DATABASE=
+
+JWT_SECRET_KEY=
+```
+
