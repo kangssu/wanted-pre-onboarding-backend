@@ -11,6 +11,8 @@ import { JobVacancyModule } from './feature/job_vacancy/jobVacancy.app.module';
 import { AuthModule } from './auth/auth.app.module';
 import { SearchModule } from './feature/search/search.app.module';
 import { JobVacancy } from './entity/jobVacancy.entity';
+import { SupportHistoryModule } from './feature/job_vacancy/support_history/supportHistory.app.module';
+import { SupportHistory } from './entity/supportHistory.entity';
 
 @Module({
   imports: [
@@ -22,7 +24,7 @@ import { JobVacancy } from './entity/jobVacancy.entity';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [User, Company, JobVacancy],
+      entities: [User, Company, JobVacancy, SupportHistory],
       synchronize: false,
       logging: true,
       keepConnectionAlive: true,
@@ -32,6 +34,7 @@ import { JobVacancy } from './entity/jobVacancy.entity';
     CompanyModule,
     JobVacancyModule,
     SearchModule,
+    SupportHistoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

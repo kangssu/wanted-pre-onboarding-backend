@@ -168,6 +168,8 @@ DB에서 삭제됩니다.
 |7|채용공고 전체 조회|GET|/job-vacancy|X|
 |8|채용공고 검색|GET|/search/job-vacancy?companyName=원티드&area=서울...|X|
 |9|채용공고 상세 조회|GET|/job-vacancy/:id|X|
+|10|채용공고 지원내역 등록|POST|/job-vacancy/:jobVacancyId/support-history|O|
+|11|채용공고 지원내역 취소|DELETE|/job-vacancy/:jobVacancyId/support-history|O|
 </br>
 
 ### 1. 사용자 회원가입
@@ -542,3 +544,50 @@ GET /job-vacancy/:id
     ]
 }
 ```
+</br>
+
+### 10. 채용공고 지원내역 등록
+* 사용자는 채용공고 상세에서 지원을 하면 지원 내역에 등록이 된다.
+* 자동으로 채용공고 ID와 로그인한 사용자 ID가 등록된다.
+* 로그인한 사용자만 지원할 수 있다.
+</br>
+
+#### (1) URL
+```
+POST /job-vacancy/:jobVacancyId/support-history
+```
+</br>
+
+#### (2) RESPONSE
+```
+{
+    "userId": 4,
+    "jobVacancyId": 7,
+    "canceledAt": null,
+    "id": 2,
+    "createdAt": "2023-10-14T09:57:20.000Z"
+}
+```
+</br>
+
+### 11. 채용공고 지원내역 취소
+* 채용공고를 지원했다가 취소 할 수 있다.
+* 취소하고 다시 지원할 수 있으며 다시 지원할 경우 새로운 지원내역이 등록된다.
+* 로그인한 사용자만 지원할 수 있다.
+</br>
+
+#### (1) URL
+```
+DELETE /job-vacancy/:jobVacancyId/support-history
+```
+</br>
+
+#### (2) RESPONSE
+```
+{
+    "id": 1,
+    "canceledAt": "2023-10-14T10:10:43.000Z"
+}
+```
+</br>
+
