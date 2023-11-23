@@ -8,11 +8,11 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './feature/user/user.app.module';
 import { JobVacancyModule } from './feature/job_vacancy/jobVacancy.app.module';
-import { AuthModule } from './auth/auth.app.module';
 import { SearchModule } from './feature/search/search.app.module';
 import { JobVacancy } from './entity/jobVacancy.entity';
 import { SupportHistoryModule } from './feature/job_vacancy/support_history/supportHistory.app.module';
 import { SupportHistory } from './entity/supportHistory.entity';
+import { AuthModule } from './feature/auth/auth.app.module';
 
 @Module({
   imports: [

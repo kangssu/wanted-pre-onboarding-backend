@@ -10,12 +10,12 @@ import {
 import { SupportHistoryService } from './supportHistory.service';
 import { CreateSupportHistoryDto } from './supportHistory.dto';
 import { SupportHistory } from 'src/entity/supportHistory.entity';
-import { JwtAuthGuard } from 'src/auth/guard/jwt.guard';
 import { UserInfo } from 'src/decorator/userDecorator';
 import { User } from 'src/entity/user.entity';
 import { JobVacancyLib } from '../jobVacancy.lib';
 import { CustomException } from 'src/custom/customException';
 import { ErrorCode } from 'src/enum/errorCode.enum';
+import { JwtAuthGuard } from 'src/feature/auth/guard/jwt.guard';
 
 @UseGuards(JwtAuthGuard)
 @Controller({

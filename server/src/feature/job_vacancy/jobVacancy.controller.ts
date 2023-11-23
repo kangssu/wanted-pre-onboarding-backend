@@ -14,13 +14,13 @@ import {
   CreateJobVacancyDto as CreateJobVacancyDto,
   UpdateJobVacancyDto,
 } from './jobVacancy.dto';
-import { JwtAuthGuard } from 'src/auth/guard/jwt.guard';
 import { UserInfo } from 'src/decorator/userDecorator';
 import { User } from 'src/entity/user.entity';
 import { JobVacancy } from 'src/entity/jobVacancy.entity';
 import { CompanyLib } from '../company/company.lib';
 import { CustomException } from 'src/custom/customException';
 import { ErrorCode } from 'src/enum/errorCode.enum';
+import { JwtAuthGuard } from '../auth/guard/jwt.guard';
 
 @Controller({
   path: '/job-vacancy',
