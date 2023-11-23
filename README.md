@@ -144,17 +144,17 @@ src
 ## API 명세
 |No|Title|Method|Path|Authorization|
 |------|------|------|------|------|
-|1|사용자 회원가입|POST|/user/sign-up|X|
-|2|사용자 로그인|POST|/auth/login|X|
-|3|회사 등록|POST|/company|O|
-|4|채용공고 등록|POST|/job-vacancy|O|
-|5|채용공고 수정|PATCH|/job-vacancy/:id|O|
-|6|채용공고 삭제|DELETE|/job-vacancy/:id|O|
-|7|채용공고 전체 조회|GET|/job-vacancy|X|
-|8|채용공고 검색|GET|/search/job-vacancy?companyName=원티드&area=서울...|X|
-|9|채용공고 상세 조회|GET|/job-vacancy/:id|X|
-|10|채용공고 지원내역 등록|POST|/job-vacancy/:jobVacancyId/support-history|O|
-|11|채용공고 지원내역 취소|DELETE|/job-vacancy/:jobVacancyId/support-history|O|
+|1|사용자 회원가입|`POST`|`/user/sign-up`|X|
+|2|사용자 로그인|`POST`|`/auth/login`|X|
+|3|회사 등록|`POST`|`/company`|O|
+|4|채용공고 등록|`POST`|`/job-vacancy`|O|
+|5|채용공고 수정|`PATCH`|`/job-vacancy/:id`|O|
+|6|채용공고 삭제|`DELETE`|`/job-vacancy/:id`|O|
+|7|채용공고 전체 조회|`GET`|`/job-vacancy`|X|
+|8|채용공고 검색|`GET`|`/search/job-vacancy?companyName=원티드&area=서울...`|X|
+|9|채용공고 상세 조회|`GET`|`/job-vacancy/:id`|X|
+|10|채용공고 지원내역 등록|`POST`|`/job-vacancy/:jobVacancyId/support-history`|O|
+|11|채용공고 지원내역 취소|`DELETE`|`/job-vacancy/:jobVacancyId/support-history`|O|
 
 </br>
 
