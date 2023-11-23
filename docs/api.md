@@ -5,7 +5,7 @@
 POST /user/sign-up
 ```
 
-* **REQUEST (JSON)**
+* **Request Body(Json)**
 ```
 {
     "email": "kang2023@gmail.com",
@@ -15,7 +15,7 @@ POST /user/sign-up
 }
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "email": "kang2023@gmail.com",
@@ -28,7 +28,7 @@ POST /user/sign-up
 }
 ```
 
-* **ERROR RESPONSE**
+* **Fail Response**
 ```
 {
     "statusCode": 409,
@@ -47,7 +47,7 @@ POST /user/sign-up
 POST /auth/login
 ```
 
-* **REQUEST (JSON)**
+* **Request Body(Json)**
 ```
 {
     "email":"kang2023@gmail.com",
@@ -55,7 +55,7 @@ POST /auth/login
 }
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjk3MjQzMDE1LCJleHAiOjE2OTc0MTU4MTV9.p_XOSpkpvoROsHT7hKCQh7_6g0xO0-3-QLyS1ahq3SByBEwzcTz5uuUWHcglwI7uA4_L2fmrWgNY_mlrxt3uJA",
@@ -71,7 +71,7 @@ POST /auth/login
 }
 ```
 
-* **ERROR RESPONSE**
+* **Fail Response**
 ```
 {
     "statusCode": 404,
@@ -90,7 +90,7 @@ POST /auth/login
 POST /company
 ```
 
-* **REQUEST (JSON)**
+* **Request Body(Json)**
 ```
 {
     "name":"원티드",
@@ -99,7 +99,7 @@ POST /company
 }
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "name": "원티드",
@@ -112,7 +112,7 @@ POST /company
 }
 ```
 
-* **ERROR RESPONSE**
+* **Fail Response**
 ```
 {
     "statusCode": 409,
@@ -131,7 +131,7 @@ POST /company
 POST /job-vacancy
 ```
 
-* **REQUEST (JSON)**
+* **Request Body(Json)**
 ```
 {
     "position":"백엔드 신입 개발자",
@@ -141,7 +141,7 @@ POST /job-vacancy
 }
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "position": "백엔드 신입 개발자",
@@ -155,7 +155,7 @@ POST /job-vacancy
 }
 ```
 
-* **ERROR RESPONSE**
+* **Fail Response**
 ```
 {
     "statusCode": 404,
@@ -171,7 +171,7 @@ POST /job-vacancy
 PATCH /job-vacancy/:id
 ```
 
-* **REQUEST (JSON)**
+* **Request Body(Json)**
 ```
 // 예시: position과 rewardPay만 수정
 {
@@ -180,7 +180,7 @@ PATCH /job-vacancy/:id
 }
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "id": 7,
@@ -201,7 +201,7 @@ PATCH /job-vacancy/:id
 DELETE /job-vacancy/:id
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "id": 6,
@@ -216,7 +216,7 @@ DELETE /job-vacancy/:id
 GET /job-vacancy
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 [
     {
@@ -261,7 +261,7 @@ GET /job-vacancy
 GET /search/job-vacancy?companyName=원티드&area=서울...
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 [
     {
@@ -293,7 +293,7 @@ GET /search/job-vacancy?companyName=원티드&area=서울...
 GET /job-vacancy/:id
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "jobVacancyAndCompany": {
@@ -329,7 +329,7 @@ GET /job-vacancy/:id
 POST /job-vacancy/:jobVacancyId/support-history
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "userId": 4,
@@ -340,7 +340,7 @@ POST /job-vacancy/:jobVacancyId/support-history
 }
 ```
 
-* **ERROR RESPONSE**
+* **Fail Response**
 ```
 {
     "statusCode": 404,
@@ -359,7 +359,7 @@ POST /job-vacancy/:jobVacancyId/support-history
 DELETE /job-vacancy/:jobVacancyId/support-history
 ```
 
-* **RESPONSE**
+* **Success Response**
 ```
 {
     "id": 1,
