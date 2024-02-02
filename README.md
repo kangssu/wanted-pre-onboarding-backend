@@ -21,7 +21,7 @@
 </br>
 
 ### 실행 환경
-* .env 파일
+* .env 파일 추가
 ```
 PORT=
 DB_USERNAME=
